@@ -17,7 +17,7 @@ The suite consists of 6 specialized utilities, sharing a unified "Dark Studio" d
 | **AmbiOrder** | 🔵 Blue | Reduces spatial resolution (e.g., 3rd Order $\to$ 1st Order). |
 | **AmbiSwap** | 🟠 Orange | Swaps formats between **AmbiX** (ACN/SN3D) and **FuMa**. |
 | **AmbiRotate** | 🔴 Red | Fixes orientation issues (Yaw/Pitch/Roll) without a DAW. |
-| **AmbiMonitor** | 🟢 Green | Quick preview tool. Toggles between **Binaural** (Headphones) and **Stereo** (Speakers). |
+| **Ambix2Bin** | 🟢 Green | Quick preview tool. Toggles between **Binaural** (Headphones) and **Stereo** (Speakers). |
 
 ---
 
@@ -49,12 +49,16 @@ This project uses a "Master Class" architecture to ensure consistency across all
 ```text
 /AmbiToolbox
 │
-├── /assets                 # Logos (VV Logo)
+├── /assets                 # Common Assets: Logos (VV Logo), Fonts
+├── /apps                   # Application Logic
+│   ├── /Ambix2Bin          # App-specific code & assets
+│   │   ├── /assets
+│   │   │   └── /hrtf       # HRTF for Binaural Rendering
+│   │   └── app_ambix2bin.py
+│   ├── /Ambix2Opus
+│   └── ...
 ├── /src
-│   ├── common_ui.py        # THE CORE: Master Boilerplate & Style Engine
-│   ├── app_monitor.py      # AmbiMonitor Logic
-│   ├── app_opus.py         # Ambix2Opus Logic
-│   └── ...                 # Other tool scripts
+│   └── common_ui.py        # THE CORE: Master Boilerplate & Style Engine
 │
 ├── AmbiToolbox_Boilerplate.md  # Source of Truth for Design/Code standards
 ├── PRP_Template.md             # Prompt template for AI Agent task generation
@@ -76,9 +80,9 @@ pip install -r requirements.txt
 ```
 
 ### Running a Tool
-To launch the **AmbiMonitor** tool (for example):
+To launch the **Ambix2Bin** tool (for example):
 ```bash
-python src/app_monitor.py
+python apps/Ambix2Bin/app_ambix2bin.py
 ```
 
 ---

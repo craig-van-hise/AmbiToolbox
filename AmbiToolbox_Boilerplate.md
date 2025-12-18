@@ -36,5 +36,5 @@ AmbiToolbox is a suite of simple, drag-and-drop desktop utilities for Ambisonics
     vv_logo.png       # Virtual Virgin Brand Logo (Only local asset required)
   /src
     common_ui.py      # CONTAINS THE MASTER CLASS
-    app_monitor.py    # Specific App logic
+    app_ambix2bin.py  # Specific App logic
   requirements.txt    # Must include: PyQt6, qtawesome
